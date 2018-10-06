@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cydia</title>
+<link rel='stylesheet' href='http://app.yalu-103.com/main/css/style.css'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+ 
+        <!-- Make the status bar black with white text. -->
+ 
+        <!-- Customize home screen title. -->
+        <meta name="apple-mobile-web-app-title" content="Web App">
+ 
+        <!-- Disable phone number detection. -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+<!-- wysuwający extender -->
+ <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+ 
+      <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="http://app.yalu-103.com/main/css/result-light.css">
+    <link rel="stylesheet" href="http://app.yalu-103.com/main/modal.css">
+<script src="http://app.yalu-103.com/main/modal.js"></script>
+
+<!-- wysuwający extender -->
+
+<script type="text/javascript" src="http://app.yalu-103.com/main/build/iscroll.js"></script>
+<script type="text/javascript" src="http://app.yalu-103.com/main/demos/demoUtils.js"></script>
+
+<script type="text/javascript">
+
+var myScroll;
+
+function loaded () {
+	myScroll = new IScroll('#wrapper', { 
+
+                   click:true,
+		tap: true,
+		scrollOverflow: true,
+
+		mouseWheel: true });
+}document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+	capture: false,
+	passive: false
+} : false);
+
+</script>
+
+<style type="text/css">
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-ms-touch-action: none;
+}
+
+body,ul,li {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-family: Arial;
+}
+
+body {
+	
+	overflow: hidden; /* this is important to prevent the whole page to bounce */
+}
+
+#header {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	background: #f6f6f8;
+	padding: 0;
+	color: #000;
+	font-size: 18px;
+	font-family: Arial;
+	text-align: center;
+	font-weight: 700
+}
+
+#footer {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background: #f6f6f8;
+	padding: 0;
+	border-top: 1px solid #a7a6ac;
+}
+
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 45px;
+	bottom: 50px;
+	left: 0;
+	width: 100%;
+	background:#F1F0F6;
+	overflow: hidden;
+}
+	#loader {
+	position: absolute;
+	z-index: 2;
+	top: 45px;
+	bottom: 50px;
+	left: 0;
+	width: 100%;
+	background:#f1f0f6;
+	overflow: hidden;
+}
+	#extender {
+	position: absolute;
+	z-index: 3;
+	top: 45px;
+	bottom: 50px;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+		pointer-events: none;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+#scroller ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	text-align: left;
+}
+
+#scroller li {
+	padding: 0 10px;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #fff;
+	background-color: #fafafa;
+	font-size: 14px;
+}
+menu1 {
+	background-color: #0a0a6f;
+	
+}
+
+	 .myButton {
+    padding: .2em 1em;
+    font-size: 1em;
+		 
+}
+.mySelect {
+    padding: .2em 0;
+    font-size: 1em;
+}
+#myDiv {
+	z-index: 3;
+	display: none;
+	max-height: 300px;
+	
+}
+	#scroller1{
+		float: left;
+		width: 100%;
+	}
+
+#myDiv p {
+
+}
+/** Style for the cointainer **/
+
+hr {
+    margin-bottom:40px;
+}
+
+</style>
+
+
+
+</head>
+
+<body onload="loaded()">
+
+<script tpye="text/javascript">
+setTimeout(function(){
+document.getElementById('load').innerHTML = 'Reload';
+}, 5000);
+</script>
+	
+
+
+<script tpye="text/javascript">
+setTimeout(function(){
+   document.getElementById('loader').style.display = 'none';
+}, 1);
+</script>
+
+
+
+
+
+
+<div id="header"><div class="naglowek1"><div id="about" class="header1 reload">làm mới</div></div><div class="naglowek2"><div width="100px" id="load" class="header2 reload"> Edit</div></div><div>Nguồn</div><div class="linia"></div></div>
+
+
+
+<div id="loader"><div class="loading">
+  <div class="load1"><img height="22px" class="load" src="http://app.yalu-103.com/main/images/loader.gif"/></div><div class="loadtekst">Loading...</div>
+</div></div>
+
+<div id="wrapper">
+	<div id="scroller">
+	
+		<div id="scroller1"><table width="100%"  class="conent1" cellspacing="0" cellpadding="0">
+ 
+  <div id="scroller1"><table width="100%"  class="conent1" cellspacing="0" cellpadding="0">
+       
+        <tr><td valign=top height="54" colspan="2" style="background:#FFFFFF" id="sources1"><div  class="all"></div><div  class="sourcestx1">All Sources</div><div  class="button"></div><div  class="sourcestx2">combined package list for below sources</div></td></tr>
+		  
+		  <tr> <td colspan="2" class="sourcesgap"><div  class="sourcestx3">Individual Sources</div><div  class="button0"></div></td></tr>
+		  
+		   <tr><td valign=top height="54" colspan="2" style="background:#FFFFFF" id="sources2"><div  class="bigboss"></div><div  class="sourcestx1">BigBoss</div><div  class="button"></div><div  class="sourcestx2">http://apt.thebigboss.org/repofiles/cydia/</div></td></tr>
+
+		   <td  colspan="2" height="1" class="obrys" ></td>
+		   
+		   <tr><td valign=top height="54" colspan="2" style="background:#FFFFFF" id="sources4"><div  class="modmyi"></div><div  class="sourcestx1">ModMyi.com</div><div  class="button"></div><div  class="sourcestx2">http://apt.modmyi.com/</div></td></tr>
+		   <td  colspan="2" height="1" class="obrys" ></td>
+		   
+		    <tr><td valign=top height="54" colspan="2" style="background:#FFFFFF" id="sources5"><div  class="LaBaStore"></div><div  class="sourcestx1">labastore.com</div><div  class="button"></div><div  class="sourcestx2">http://labastore.com/</div></td></tr> <td  colspan="2" height="1" class="obrys" ></td>
+		    
+		    <tr><td valign=top height="54" colspan="2" style="background:#FFFFFF" id="sources6"><div  class="zod"></div><div  class="sourcestx1">ZodTTD & MacCiti</div><div  class="button"></div><div  class="sourcestx2">http://cydia.zodttd.com/repo/cydia/</div></td></tr>
+		     <td  colspan="2" height="1" class="obrys" ></td>
+		     
+		     <tr><td valign=top height="54" colspan="2"  id="sources6"></td></tr>
+		     <td  colspan="2" height="1" class="obrys" ></td>
+		     <tr><td valign=top height="54" colspan="2"  id="sources6"></td></tr>
+		     <td  colspan="2" height="1" class="obrys" ></td>
+   
+
+	</script>
+</body>
+</html>
